@@ -27,6 +27,8 @@ public class OrderController {
     }
 
     //127.0.0.1:9002/order/search/1/10   {}  body
+
+    //网关 127.0.0.1:8001/order/order/search/1/10
     @PostMapping("/search/{page}/{size}")
     //@OperateLog
     public Result findPage(@RequestBody Map<String,String> searchMap , @PathVariable("page") Integer page, @PathVariable("size") Integer size){
