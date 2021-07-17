@@ -15,6 +15,7 @@
         <module>v_eureka_server</module>
         <module>v_gateway</module>
         <module>v_service_goods</module>
+        <module>v_service_order</module>
     </modules>
     <!-- springBoot项目需要集成自父工程 -->
     <parent>

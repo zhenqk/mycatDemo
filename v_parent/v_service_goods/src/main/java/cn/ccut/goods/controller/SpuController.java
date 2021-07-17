@@ -27,7 +27,7 @@ public class SpuController {
         return new Result<TbSpu>(true, StatusCode.OK,"查询成功",tbSpu);
     }
 
-
+//127.0.0.1:9001/spu/search/1/10  {} body
     @PostMapping("/search/{page}/{size}")
     public Result findPage(@RequestBody Map<String,String> searchMap, @PathVariable("page") Integer page  , @PathVariable("size") Integer size){
         Page pageResult = spuService.search(searchMap, page, size);
