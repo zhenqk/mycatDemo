@@ -4,6 +4,7 @@ import cn.ccut.entity.PageResult;
 import cn.ccut.entity.Result;
 import cn.ccut.entity.StatusCode;
 import cn.ccut.model.TbOrder;
+import cn.ccut.order.aop.OperateLog;
 import cn.ccut.order.service.OrderService;
 import com.github.pagehelper.Page;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping("/add")
-   // @OperateLog
+    @OperateLog
     public Result add(@RequestBody TbOrder order){
         orderService.add(order);
         return new Result(true, StatusCode.OK,"提交成功");
