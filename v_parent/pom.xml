@@ -12,6 +12,7 @@
         <module>v_model</module>
         <module>v_common</module>
         <module>v_feign_api</module>
+        <module>v_eureka_server</module>
     </modules>
     <!-- springBoot项目需要集成自父工程 -->
     <parent>
