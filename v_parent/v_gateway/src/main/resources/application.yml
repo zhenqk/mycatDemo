@@ -1,0 +1,27 @@
+server:
+  port: 8001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8161/eureka
+  instance:
+    prefer-ip-address: true
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: v_goods_route
+          uri: lb://goods
+          predicates:
+            - Path=/goods/**
+          filters:
+            - StripPrefix=1
+
+        - id: v_order_route
+          uri: lb://order
+          predicates:
+            - Path=/order/**
+          filters:
+            - StripPrefix=1
