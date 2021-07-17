@@ -4,6 +4,7 @@ package cn.ccut.goods.controller;
 import cn.ccut.entity.PageResult;
 import cn.ccut.entity.Result;
 import cn.ccut.entity.StatusCode;
+import cn.ccut.goods.aop.OperateLog;
 import cn.ccut.goods.service.SpuService;
 import cn.ccut.model.TbSpu;
 import com.github.pagehelper.Page;
@@ -21,7 +22,7 @@ public class SpuController {
     private SpuService spuService;
 
     @GetMapping("/{id}")
-    //@OperateLog
+    @OperateLog
     public Result<TbSpu> findById(@PathVariable("id") String id){
         TbSpu tbSpu = spuService.findById(id);
         return new Result<TbSpu>(true, StatusCode.OK,"查询成功",tbSpu);

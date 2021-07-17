@@ -3,6 +3,7 @@ package cn.ccut.goods.controller;
 
 import cn.ccut.entity.Result;
 import cn.ccut.entity.StatusCode;
+import cn.ccut.goods.aop.OperateLog;
 import cn.ccut.goods.service.SkuService;
 import cn.ccut.model.TbSku;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class SkuController {
     private SkuService skuService;
 
     @GetMapping("/{id}")
-   // @OperateLog
+    @OperateLog
     public Result findById(@PathVariable("id") String id){
         TbSku sku = skuService.findById(id);
         return new Result(true, StatusCode.OK,"查询成功",sku);

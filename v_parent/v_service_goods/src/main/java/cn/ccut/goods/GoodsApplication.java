@@ -8,7 +8,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableEurekaClient
-@EnableFeignClients(basePackages = "cn.ccut.goods.fegin")
+@EnableFeignClients(basePackages = "cn.ccut.fegin.client")
 @MapperScan(basePackages = "cn.ccut.goods.mapper")
 public class GoodsApplication {
     public static void main(String[] args) {
